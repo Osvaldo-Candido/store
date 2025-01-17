@@ -32,7 +32,7 @@ export const Input = styled.TextInput`
   font-size: 16px;
   padding: 0 8px;
 `;
-export const ButtonCart = styled.View``;
+export const ButtonCart = styled.TouchableOpacity``;
 export const TextLogo = styled.Text`
   font-size: 20px;
   font-weight: bold;

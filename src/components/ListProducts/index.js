@@ -11,7 +11,7 @@ import {
   ButtonAddCart,
 } from './styles';
 
-export default function ListProducts({ data }) {
+export default function ListProducts({ data, addCart }) {
   return (
     <Container>
       <ContainerProduct>
@@ -24,7 +24,7 @@ export default function ListProducts({ data }) {
             </ProductPrice>
             <ProductName>{data?.name}</ProductName>
           </ContainerNameAndPrice>
-          <ButtonAddCart>
+          <ButtonAddCart onPress={addCart}>
             <MaterialIcons
               name="add-shopping-cart"
               size={28}
