@@ -10,6 +10,7 @@ import { ProductContext } from '../../context/products';
 export default function Home() {
   const [products, setProducts] = useState([]);
   const { addProductInCart } = useContext(ProductContext);
+
   useFocusEffect(
     useCallback(() => {
       let isActive = true;
@@ -32,6 +33,8 @@ export default function Home() {
     }, []),
   );
 
+  const singlePage = (product) => {};
+
   function addCart(product) {
     if (!product) {
       console.log('Seleccione correctamente o produto');
@@ -48,7 +51,11 @@ export default function Home() {
         data={products}
         keyExtractor={(product) => String(product.id)}
         renderItem={({ item }) => (
-          <ListProducts addCart={() => addCart(item)} data={item} />
+          <ListProducts
+            addCart={() => addCart(item)}
+            data={item}
+            single={() => singlePage(item)}
+          />
         )}
         numColumns={2}
         columnWrapperStyle={{ justifyContent: 'space-between' }}

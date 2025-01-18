@@ -38,12 +38,12 @@ export function ProductProvider({ children }) {
     changeTotal(updateProducts);
   };
 
-  function changeTotal(items) {
+  const changeTotal = (items) => {
     const result = items.reduce((acc, obj) => {
       return acc + obj.total;
     }, 0);
     setTotal(result);
-  }
+  };
   return (
     <ProductContext.Provider
       value={{ addProductInCart, removeProductInCart, cart, total }}

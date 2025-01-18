@@ -10,7 +10,8 @@ export const Container = styled.View`
 `;
 
 export const TextTotal = styled.Text`
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 500;
 `;
 
 export const BtnBuy = styled.TouchableOpacity`

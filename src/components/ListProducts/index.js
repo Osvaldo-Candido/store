@@ -9,17 +9,35 @@ import {
   ContainerDetailes,
   ContainerNameAndPrice,
   ButtonAddCart,
+  ButtonDescription,
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
-export default function ListProducts({ data, addCart }) {
+export default function ListProducts({ data, addCart, single }) {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <ContainerProduct>
-        <ProductImage source={{ uri: data?.image }} />
+        <ButtonDescription
+          onPress={() => navigation.navigate('SingleProduct', { id: data?.id })}
+        >
+          <ProductImage source={{ uri: data?.image }} />
+        </ButtonDescription>
+
         <ContainerDetailes>
           <ContainerNameAndPrice>
             <ProductPrice>
-              <Text style={{ fontSize: 15, margin: 0, padding: 0 }}>AOA</Text>{' '}
+              <Text
+                style={{
+                  fontSize: 15,
+                  margin: 0,
+                  padding: 0,
+                  fontWeigh: 'regular',
+                }}
+              >
+                AOA
+              </Text>{' '}
               {data?.price}{' '}
             </ProductPrice>
             <ProductName>{data?.name}</ProductName>

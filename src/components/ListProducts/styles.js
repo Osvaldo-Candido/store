@@ -33,4 +33,5 @@ export const ButtonAddCart = styled.TouchableOpacity`
   padding: 10px;
   border: 1px solid #f3c1c1;
 `;
+export const ButtonDescription = styled.TouchableOpacity``;
 export const ContainerNameAndPrice = styled.View``;
